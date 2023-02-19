@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "captcha-recognizer"
+version = "0.0.0"
+description = ""
+authors = ["JacobLinCool <jacoblincool@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.10"
+opencv-python = "^4.7.0.68"
+gradio = "^3.18.0"
+setuptools = "^67.3.2"
+pytesseract = "^0.3.10"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+poethepoet = "^0.18.1"
+
+[tool.poe.tasks]
+format = "black ."
+collect = "python -m scripts/collect"
+preprocess = "python -m scripts.preprocess"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
