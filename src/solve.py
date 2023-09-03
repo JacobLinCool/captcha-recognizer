@@ -22,6 +22,9 @@ def normalize(s: str) -> str:
 
     s = s.replace(" ", "").lower()
 
+    if len(s) < 3:
+        return ""
+
     # if first is number
     if s[0].isdigit() and s[2].isdigit():
         if s[1] in ["+", "4"]:
